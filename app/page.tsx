@@ -158,10 +158,10 @@ export default function Home() {
   });
 
   return (
-    <main className="flex h-screen bg-orange-50 text-gray-800">
-      <div className="flex w-full max-w-5xl mx-auto p-4 gap-4">
-        {/* 왼쪽: 채팅 */}
-        <div className="flex flex-col flex-1 bg-white rounded-3xl shadow-sm overflow-hidden">
+    <main className="h-screen bg-orange-50 text-gray-800">
+      <div className="flex flex-col md:flex-row h-full w-full max-w-5xl mx-auto p-2 sm:p-4 gap-3 sm:gap-4">
+        {/* 왼쪽(모바일: 아래쪽): 채팅 */}
+        <div className="order-2 md:order-1 flex flex-col flex-1 min-h-0 bg-white rounded-3xl shadow-sm overflow-hidden">
           <header className="flex items-center justify-between px-5 py-4 border-b border-orange-100">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-orange-400 flex items-center justify-center text-xl">
@@ -246,9 +246,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 오른쪽: 할 일 */}
-        <div className="w-64 bg-white rounded-3xl shadow-sm p-5 overflow-y-auto">
-          <h2 className="font-bold mb-4 flex items-center gap-2">
+        {/* 오른쪽(모바일: 위쪽): 할 일 */}
+        <div className="order-1 md:order-2 w-full md:w-64 shrink-0 bg-white rounded-3xl shadow-sm p-4 sm:p-5 overflow-y-auto max-h-44 md:max-h-none">
+          <h2 className="font-bold mb-3 sm:mb-4 flex items-center gap-2">
             📝 오늘 할 일
           </h2>
           {todos.length === 0 && (
